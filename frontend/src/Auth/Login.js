@@ -3,7 +3,7 @@ import {useContext, useState} from "react";
 import {userContext} from "../Context/UserContext";
 import useGetJWT from "../Hook/useGetJWT";
 
-export default function Login() {
+export default function Login(props) {
     const navigate = useNavigate();
     let location = useLocation();
     let from = location.state?.from?.pathname || '/';
@@ -26,6 +26,7 @@ export default function Login() {
         getJWT(username, password).then(data => {
             if (data.JWT) {
                 setLoggedUser(data.JWT);
+                props.setLoggedUserId(data.user_id);
                 navigate(from, {replace: true});
             } else {
                 console.log(data)
