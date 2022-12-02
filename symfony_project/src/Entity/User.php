@@ -16,11 +16,11 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     #[ORM\Id]
     #[ORM\GeneratedValue]
     #[ORM\Column(type: 'integer')]
-    #[Groups('main')]
+    #[Groups(['main', 'channelByUser'])]
     private $id;
 
     #[ORM\Column(type: 'string', length: 180, unique: true)]
-    #[Groups('main')]
+    #[Groups(['main', 'channelByUser'])]
     private $username;
 
     #[ORM\Column(type: 'json')]

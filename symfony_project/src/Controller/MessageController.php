@@ -59,7 +59,7 @@ class MessageController extends AbstractController
                 "https://example.com/user/{$user->getId()}/?topic=" . urlencode("https://example.com/my-private-topic")
             ],
             json_encode([
-                'message' => $data
+                'message' => $data->message
             ]),
             true
         );

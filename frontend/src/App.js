@@ -3,7 +3,7 @@ import {BrowserRouter, Routes, Route} from "react-router-dom";
 import NeedAuth from "./Auth/NeedAuth";
 import UserList from "./Component/UserList";
 import Login from "./Auth/Login";
-import UserProvider, { userContext } from "./Context/UserContext";
+import UserProvider from "./Context/UserContext";
 import NavbarMode from './Component/NavbarMode';
 import { useState } from 'react';
 import ConversationPage from './Component/ConversationPage';

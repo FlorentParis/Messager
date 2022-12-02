@@ -30,7 +30,6 @@ class ChannelController extends AbstractController
         $users_id = array($user1->getId() , $user2->getId());
         sort($users_id);
         $ids = $users_id[0] . $users_id[1];
-        // $channel = $channelRepository->find(1);
         $channel = $channelRepository->findByUsersId($ids);
 
         // $context = (new ObjectNormalizerContextBuilder())

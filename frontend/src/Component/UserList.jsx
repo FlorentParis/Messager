@@ -7,13 +7,13 @@ export default function UserList(props) {
     const [userList, setUserList] = useState([]);
 
     const getUserList = useGetUserList();
-    const getChannelsByUsers = useGetChannelByUsersId();
+    const getChannelByUsers = useGetChannelByUsersId();
 
     const userChoice = (e) => {
         e.preventDefault();
         const userId = e.target[0].value;
         props.setUserId(userId);
-        getChannelsByUsers(props.loggedUserId, userId).then(res => console.log(res));
+        getChannelByUsers(props.loggedUserId, userId).then(res => props.setChannel(res));
     }
 
     useEffect(() => {
@@ -31,6 +31,7 @@ export default function UserList(props) {
                 <MagnifyingGlassIcon style={{height: '15px', position: 'absolute', right: '20px', color: '#6c757d'}} />
             </div>
             {userList.map((user) => (
+                user.id != props.loggedUserId ? 
                 <form className='w-100 mx-auto' onSubmit={userChoice}>
                     <button style={{height: '60px'}} className='d-flex border-0 w-100 bg-transparent text-white' type='submit' value={user.id}>
                         <UserCircleIcon className="h-100" />  
@@ -43,6 +44,7 @@ export default function UserList(props) {
                         </div>
                     </button>
                 </form>
+                : ''
             ))}
         </div>
     )
