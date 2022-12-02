@@ -1,6 +1,6 @@
-# Mercure
+# Messager
 
-Une rapide démo de ping privé avec Mercure https://mercure.rocks/
+La version wish de Messenger, sans les appels, les emoji, les gifs, ...
 
 Pour lancer le projet :
 ```shell
